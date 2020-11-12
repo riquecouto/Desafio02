@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun callCadastro() {
-        var intent = Intent(this, CardapioActivity::class.java)
+        var intent = Intent(this, CadastroActivity::class.java)
         startActivity(intent)
     }
 }

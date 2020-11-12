@@ -3,7 +3,6 @@ package com.example.desafio02
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentManager
-import kotlinx.android.synthetic.main.activity_home.view.*
 
 class HomeActivity : AppCompatActivity() {
     companion object{
@@ -14,6 +13,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         fm = supportFragmentManager
-        fm.beginTransaction().add(R.id.flFragRestaurante, RestauranteFragment(), null).commit()
+        fm.beginTransaction().add(R.id.flFragRestaurante, RestaurantesFragment(), null).commit()
     }
 }
