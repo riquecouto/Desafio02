@@ -1,5 +1,7 @@
 package com.example.desafio02
 
+import android.app.PendingIntent.getActivity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class RestaurantesAdapter(private val listRestaurantes: List<Restaurante>) : RecyclerView.Adapter<RestaurantesAdapter.RestaurantesViewHolder>() {

@@ -1,2 +1,8 @@
-package com.example.desafio02 
+package com.example.desafio02
 
+data class Prato(
+    val codRestaurante: Int,
+    val imagem: Int,
+    val nome: String
+) {
+}

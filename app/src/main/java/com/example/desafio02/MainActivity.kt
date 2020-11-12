@@ -10,22 +10,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ac_main_btn_register.setOnClickListener() {
-            callCadastro()
-        }
-
         ac_main_btn_login.setOnClickListener() {
             callHome()
         }
-    }
 
-    fun callCadastro() {
-        var intent = Intent(this, RegistroActivity::class.java)
-        startActivity(intent)
+        ac_main_btn_register.setOnClickListener() {
+            callCadastro()
+        }
     }
 
     fun callHome() {
         var intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun callCadastro() {
+        var intent = Intent(this, CardapioActivity::class.java)
         startActivity(intent)
     }
 }
