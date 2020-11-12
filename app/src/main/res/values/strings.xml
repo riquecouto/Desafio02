@@ -5,4 +5,10 @@
     <string name="action_sign_in_short">Log in</string>
     <string name="action_sign_in">LOG IN</string>
     <string name="btn_register">REGISTER</string>
+    <string name="ac_reg_name_hint">Name</string>
+    <string name="ac_reg_email_hint">Email</string>
+    <string name="ac_reg_password_hint">Password</string>
+    <string name="ac_reg_btn_register">REGISTER</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

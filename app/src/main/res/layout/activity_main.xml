@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/colorWhite" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
@@ -15,14 +26,14 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:textColor="@color/colorPrimary" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,15 +53,15 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:inputType="textPassword"
             android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionDone"/>
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/ac_main_btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -59,7 +70,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#FF5252"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/action_sign_in"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,12 +88,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/ac_main_btn_login"
         app:layout_constraintVertical_bias="0.13" />
 
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/ac_main_btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -91,7 +102,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#8492A6"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/btn_register"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -5,55 +5,37 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RestauranteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RestauranteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var listaRestaurantes = mutableListOf<Restaurante>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_restaurante, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RestauranteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RestauranteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        popularLista()
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerRestaurantes)
+
+        recyclerView.adapter = RestaurantesAdapter(listaRestaurantes)
+            recyclerView.layoutManager = LinearLayoutManager(view.context)
+    }
+
+    private fun popularLista() {
+        listaRestaurantes.add(Restaurante(R.drawable.image1, "Tony Roma's", "Av. Lavandisca, 717 - Indianápolis, São Paulo","Fecha às 22:00"))
+        listaRestaurantes.add(Restaurante(R.drawable.image4, "Aoyama - Moema", "Alameda dos Arapanés, 532 - Moema","Fecha às 00:00"))
+        listaRestaurantes.add(Restaurante(R.drawable.image5, "Outback - Moema", "Av. Moaci, 187, 187 - Moema, São Paulo","Fecha às 00:00"))
+        listaRestaurantes.add(Restaurante(R.drawable.image3, "Sí Señor!", "Alameda Jauaperi, 626 - Moema","Fecha às 01:00"))
+//        listaRestaurantes.add(Restaurante("@drawable/image4", "Sí Señor!", "Alameda Jauaperi, 626 - Moema","Fecha às 01:00"))
     }
 }
