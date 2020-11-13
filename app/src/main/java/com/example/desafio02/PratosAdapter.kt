@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class PratosAdapter(private val listPratos: List<Prato>) : RecyclerView.Adapter<PratosAdapter.PratosViewHolder>() {
@@ -23,7 +24,9 @@ class PratosAdapter(private val listPratos: List<Prato>) : RecyclerView.Adapter<
         holder.imageView.setImageResource(listPratos[position].imagem)
 
         holder.itemView.setOnClickListener{
-            Toast.makeText(holder.itemView.context, "Voce tocou no prato: ${listPratos[position].nome}", Toast.LENGTH_SHORT).show()
+            val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager
+            manager.beginTransaction().replace(R.id.flFragRestaurante, DetalhesFragment(), null)
+                .addToBackStack(null).commit()
         }
     }
 

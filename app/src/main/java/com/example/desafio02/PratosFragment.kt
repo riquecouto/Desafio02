@@ -42,7 +42,5 @@ class PratosFragment : Fragment() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"))
         listaPratos.add(Prato(1, R.drawable.image4, "Salada com molho Gengibre",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"))
-        listaPratos.add(Prato(1, R.drawable.image4, "Salada com molho Gengibre",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"))
     }
 }
