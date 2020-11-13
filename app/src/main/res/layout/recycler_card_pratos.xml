@@ -22,8 +22,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:padding="6dp">
 
             <TextView
@@ -31,9 +31,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nome do Restaurante"
+                android:textAlignment="center"
                 android:textColor="@color/colorTextPrato"
                 android:textSize="18sp"
-                android:textAlignment="center"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

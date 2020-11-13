@@ -2,17 +2,20 @@ package com.example.desafio02
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
+import android.transition.Fade
 
 class HomeActivity : AppCompatActivity() {
-    companion object{
-        lateinit var fm: FragmentManager
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        fm = supportFragmentManager
-        fm.beginTransaction().add(R.id.flFragRestaurante, RestaurantesFragment(), null).commit()
+        val fragment = RestaurantesFragment().apply {
+            enterTransition = Fade()
+            exitTransition = Fade()
+        }
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.flHomeFragment, fragment, null)
+            .commit()
     }
 }

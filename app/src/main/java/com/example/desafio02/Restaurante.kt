@@ -6,5 +6,4 @@ data class Restaurante(
     val nome: String,
     val endereco: String,
     val horario: String
-) {
-}
+)

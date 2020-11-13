@@ -5,5 +5,4 @@ data class Prato(
     val imagem: Int,
     val nome: String,
     val descricao: String
-) {
-}
+)

@@ -3,12 +3,12 @@ package com.example.desafio02
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_login.*
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         ac_main_btn_login.setOnClickListener() {
             callHome()
@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun callHome() {
-        var intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 
     fun callCadastro() {
-        var intent = Intent(this, CadastroActivity::class.java)
+        val intent = Intent(this, CadastroActivity::class.java)
         startActivity(intent)
     }
 }

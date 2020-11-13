@@ -1,5 +1,6 @@
 package com.example.desafio02
 
+import android.transition.Fade
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class RestaurantesAdapter(private val listRestaurantes: List<Restaurante>) :
-    RecyclerView.Adapter<RestaurantesAdapter.RestaurantesViewHolder>() {
-
+class RestaurantesAdapter(private val listRestaurantes: List<Restaurante>) : RecyclerView.Adapter<RestaurantesAdapter.RestaurantesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantesViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_card_restaurantes, parent, false)
@@ -29,8 +28,15 @@ class RestaurantesAdapter(private val listRestaurantes: List<Restaurante>) :
 
         holder.itemView.setOnClickListener {
             val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager
-            manager.beginTransaction().replace(R.id.flFragRestaurante, PratosFragment(), null)
-                .addToBackStack(null).commit()
+            val fragment = PratosFragment(listRestaurantes[position].nome, listRestaurantes[position].imagem).apply {
+                enterTransition = Fade()
+                exitTransition = Fade()
+            }
+            manager
+                .beginTransaction()
+                .replace(R.id.flHomeFragment, fragment, null)
+                .addToBackStack(null)
+                .commit()
         }
     }
 

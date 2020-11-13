@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/colorWhite"
-        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/colorWhite" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ac_reg_name"
@@ -33,8 +33,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textColor="@color/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -53,8 +53,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -73,8 +73,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -93,8 +93,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -108,7 +108,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#FF5252"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/ac_reg_btn_register"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
